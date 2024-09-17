@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongodb</title>
+</head>
+<body>
+    <form method="post">
+        <label for="kun">Hafta kunini kiriting</label>
+        <input type="text" id="kun" class="kun" name="kun" required>
+
+        <label for="harorat">Haroratni kiriting</label>
+        <input type="number" id="harorat" class="harorat" name="harorat" required>
+
+        <input type="submit" value="Yuborish">
+    </form>
+
+
+    {% if records %}
+    <h2>Saqlangan ma'lumotlar:</h2>
+    <ul>
+        {% for record in records %}
+            <li>Kun: {{ record.kun }} - Harorat: {{ record.harorat }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+        <p>Hech qanday ma'lumot mavjud emas.</p>
+    {% endif %}  
+</body>
+</html>
